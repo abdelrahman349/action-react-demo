@@ -25,6 +25,6 @@ jobs:
         with:
           context:  "{{defaultContext}}"
           push: true
-          tags: nodejs-secure:latest  
+          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-secure:latest  
 
 
