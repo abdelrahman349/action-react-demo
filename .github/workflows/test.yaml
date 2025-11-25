@@ -5,6 +5,12 @@ on:
       - Master
 
 jobs:
+  checkout_code:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v4
   login_to_Docker_Hub:
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +25,9 @@ jobs:
     needs: login_to_Docker_Hub
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       -
         name: build the Docker image
         uses: docker/build-push-action@v4
