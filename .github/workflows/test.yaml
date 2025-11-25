@@ -5,12 +5,6 @@ on:
       - Master
 
 jobs:
-  checkout_code:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout code
-        uses: actions/checkout@v4
   login_to_Docker_Hub:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +19,11 @@ jobs:
     needs: login_to_Docker_Hub
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Checkout repository
+        uses: actions/checkout@v4
+      
+
       - name: set up QEMU
         uses: docker/setup-qemu-action@v2
       -
