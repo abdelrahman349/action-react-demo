@@ -5,18 +5,7 @@ on:
       - Master
 
 jobs:
-  login_to_Docker_Hub:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
   build_and_test:
-    needs: login_to_Docker_Hub
     runs-on: ubuntu-latest
     steps:
       -
