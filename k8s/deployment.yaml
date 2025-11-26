@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-nodejs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: secure-nodejs
+  template:
+    metadata:
+      labels:
+        app: secure-nodejs
+    spec:
+      containers:
+      - name: secure-nodejs
+        image: 3booda24/secure-nodejs:latest
+        ports:
+        - containerPort: 3000
