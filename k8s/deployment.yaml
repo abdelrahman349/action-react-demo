@@ -13,7 +13,14 @@ spec:
         app: secure-nodejs
     spec:
       containers:
-      - name: secure-nodejs
-        image: 3booda24/secure-nodejs:latest
-        ports:
-        - containerPort: 3000
+        - name: secure-nodejs
+          image: 3booda24/secure-nodejs:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
