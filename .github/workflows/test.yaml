@@ -4,8 +4,13 @@ on:
   push:
     branches:
       - Master
-    paths-ignore:
-      - "README.md"
+    paths:
+      - 'Dockerfile'
+      - 'k8s/**'
+      - 'src/**'
+      - 'package.json'
+      - 'vite.config.js'
+
 
 jobs:
 
