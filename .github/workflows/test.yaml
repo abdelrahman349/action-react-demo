@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - Master
+    paths-ignore:
+      - "README.md"
 
 jobs:
 
@@ -90,4 +92,3 @@ jobs:
         run: |
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
-
