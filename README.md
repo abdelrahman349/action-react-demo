@@ -35,7 +35,7 @@ This project demonstrates a **complete end-to-end DevOps workflow** for deployin
 ---
 
 ## 🏗️ Architecture
-
+########
 ### End-to-End Deployment Flow
 
 ```
